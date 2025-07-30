@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agendamento Médico Online - Sua Saúde na Mão</title>
+    <link rel="stylesheet" href="css/style.css">
+    </head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>Agendamento Médico Online</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Início</a></li>
+                    <li><a href="#agendamento">Agendar Consulta</a></li>
+                    <li><a href="#medicos">Nossos Médicos</a></li>
+                    <li><a href="#especialidades">Especialidades</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                    <li><a href="#login">Login</a></li>
+                    <li><a href="#cadastro">Cadastre-se</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="container">
+                <h2>Encontre o médico ideal e agende sua consulta online!</h2>
+                <p>Facilidade, agilidade e segurança para cuidar da sua saúde.</p>
+                <a href="#agendamento" class="btn-primary">Agendar Agora</a>
+            </div>
+        </section>
+
+        <section id="agendamento" class="section-agendamento">
+            <div class="container">
+                <h2>Agende Sua Consulta</h2>
+                <form class="form-agendamento">
+                    <div class="form-group">
+                        <label for="especialidade">Especialidade:</label>
+                        <select id="especialidade" name="especialidade" required>
+                            <option value="">Selecione a Especialidade</option>
+                            <option value="cardiologia">Cardiologia</option>
+                            <option value="dermatologia">Dermatologia</option>
+                            <option value="pediatria">Pediatria</option>
+                            <option value="ginecologia">Ginecologia</option>
+                            </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="medico">Médico:</label>
+                        <select id="medico" name="medico" required>
+                            <option value="">Selecione o Médico</option>
+                            </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="data-consulta">Data:</label>
+                        <input type="date" id="data-consulta" name="data-consulta" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="hora-consulta">Horário:</label>
+                        <select id="hora-consulta" name="hora-consulta" required>
+                            <option value="">Selecione o Horário</option>
+                            </select>
+                    </div>
+                    <button type="submit" class="btn-primary">Buscar Horários</button>
+                </form>
+            </div>
+        </section>
+
+        <section id="medicos" class="section-medicos">
+            <div class="container">
+                <h2>Nossos Profissionais</h2>
+                <div class="medico-grid">
+                    <div class="medico-card">
+                        <img src="img/medico1.jpg" alt="Dra. Ana Silva">
+                        <h3>Dra. Ana Silva</h3>
+                        <p>Dermatologista</p>
+                        <a href="#" class="btn-secondary">Ver Perfil</a>
+                    </div>
+                    <div class="medico-card">
+                        <img src="img/medico2.jpg" alt="Dr. João Oliveira">
+                        <h3>Dr. João Oliveira</h3>
+                        <p>Cardiologista</p>
+                        <a href="#" class="btn-secondary">Ver Perfil</a>
+                    </div>
+                    </div>
+            </div>
+        </section>
+
+        <section id="especialidades" class="section-especialidades">
+            <div class="container">
+                <h2>Nossas Especialidades</h2>
+                <ul>
+                    <li>Cardiologia</li>
+                    <li>Dermatologia</li>
+                    <li>Pediatria</li>
+                    <li>Ginecologia e Obstetrícia</li>
+                    <li>Oftalmologia</li>
+                    </ul>
+            </div>
+        </section>
+
+        <section id="contato" class="section-contato">
+            <div class="container">
+                <h2>Fale Conosco</h2>
+                <p>Telefone: (XX) XXXX-XXXX</p>
+                <p>Email: contato@agendamentomedico.com.br</p>
+                <p>Endereço: Rua da Saúde, 123 - Centro, Curitiba - PR</p>
+                </div>
+        </section>
+
+        <section id="login" class="section-auth">
+            <div class="container">
+                <h2>Login</h2>
+                <form class="form-auth">
+                    <div class="form-group">
+                        <label for="login-email">E-mail:</label>
+                        <input type="email" id="login-email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="login-senha">Senha:</label>
+                        <input type="password" id="login-senha" name="senha" required>
+                    </div>
+                    <button type="submit" class="btn-primary">Entrar</button>
+                    <p>Esqueceu sua senha? <a href="#">Clique aqui</a></p>
+                </form>
+            </div>
+        </section>
+
+        <section id="cadastro" class="section-auth">
+            <div class="container">
+                <h2>Cadastre-se</h2>
+                <form class="form-auth">
+                    <div class="form-group">
+                        <label for="cadastro-nome">Nome Completo:</label>
+                        <input type="text" id="cadastro-nome" name="nome" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="cadastro-email">E-mail:</label>
+                        <input type="email" id="cadastro-email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="cadastro-telefone">Telefone:</label>
+                        <input type="tel" id="cadastro-telefone" name="telefone" required>
+                    </div>
+                     <div class="form-group">
+                        <label for="cadastro-senha">Senha:</label>
+                        <input type="password" id="cadastro-senha" name="senha" required>
+                    </div>
+                    <button type="submit" class="btn-primary">Criar Conta</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Agendamento Médico Online. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
