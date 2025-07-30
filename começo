@@ -4,8 +4,286 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agendamento Médico Online - Sua Saúde na Mão</title>
-    <link rel="stylesheet" href="css/style.css">
-    </head>
+
+    <style>
+        /* Geral e Reset Básico */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f7f6;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        a {
+            text-decoration: none;
+            color: #007bff;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Botões */
+        .btn-primary {
+            display: inline-block;
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+            text-decoration: none;
+        }
+
+        .btn-secondary {
+            display: inline-block;
+            background-color: #6c757d;
+            color: #fff;
+            padding: 8px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-secondary:hover {
+            background-color: #5a6268;
+            text-decoration: none;
+        }
+
+        /* Cabeçalho (Header) */
+        header {
+            background-color: #fff;
+            color: #333;
+            padding: 20px 0;
+            border-bottom: 1px solid #ddd;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        header h1 {
+            font-size: 28px;
+            color: #007bff;
+            margin: 0;
+        }
+
+        header nav ul {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        header nav ul li {
+            margin-left: 20px;
+        }
+
+        header nav ul li a {
+            color: #555;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        header nav ul li a:hover {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        /* Seções Gerais */
+        section {
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        section h2 {
+            font-size: 36px;
+            margin-bottom: 30px;
+            color: #007bff;
+        }
+
+        /* Seção Hero (Banner Principal) */
+        .hero {
+            background-color: #e0f2f7;
+            color: #333;
+            padding: 100px 0;
+        }
+
+        .hero h2 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: #007bff;
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+        }
+
+        /* Formulários */
+        .form-group {
+            margin-bottom: 15px;
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .form-agendamento, .form-auth {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-auth p {
+            margin-top: 15px;
+            font-size: 14px;
+        }
+
+        /* Cards de Médico */
+        .medico-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .medico-card {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .medico-card img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 15px;
+            border: 3px solid #007bff;
+        }
+
+        .medico-card h3 {
+            font-size: 22px;
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        .medico-card p {
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        /* Seção de Especialidades */
+        .section-especialidades ul {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .section-especialidades ul li {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-weight: bold;
+        }
+
+        /* Rodapé (Footer) */
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 30px 0;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        /* --- Responsividade --- */
+        @media (max-width: 768px) {
+            header .container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            header nav ul {
+                margin-top: 15px;
+                flex-direction: column;
+            }
+
+            header nav ul li {
+                margin: 5px 0;
+            }
+
+            .hero h2 {
+                font-size: 36px;
+            }
+
+            .hero p {
+                font-size: 18px;
+            }
+
+            section {
+                padding: 40px 0;
+            }
+
+            section h2 {
+                font-size: 30px;
+            }
+
+            .medico-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
 <body>
     <header>
         <div class="container">
@@ -75,13 +353,13 @@
                 <h2>Nossos Profissionais</h2>
                 <div class="medico-grid">
                     <div class="medico-card">
-                        <img src="img/medico1.jpg" alt="Dra. Ana Silva">
+                        <img src="https://avozdaserra.com.br/sites/default/files/n/5023/20210824_col-etc-futura-doutora-.jpg" alt="Dra. Ana Silva">
                         <h3>Dra. Ana Silva</h3>
                         <p>Dermatologista</p>
                         <a href="#" class="btn-secondary">Ver Perfil</a>
                     </div>
                     <div class="medico-card">
-                        <img src="img/medico2.jpg" alt="Dr. João Oliveira">
+                        <img src="https://empreendedor.com.br/wp-content/uploads/2021/01/rsw_350h_263i_truecg_trueft_cover-300x225.jpg" alt="Dr. João Oliveira">
                         <h3>Dr. João Oliveira</h3>
                         <p>Cardiologista</p>
                         <a href="#" class="btn-secondary">Ver Perfil</a>
@@ -99,6 +377,7 @@
                     <li>Pediatria</li>
                     <li>Ginecologia e Obstetrícia</li>
                     <li>Oftalmologia</li>
+                    
                     </ul>
             </div>
         </section>
@@ -106,10 +385,10 @@
         <section id="contato" class="section-contato">
             <div class="container">
                 <h2>Fale Conosco</h2>
-                <p>Telefone: (XX) XXXX-XXXX</p>
+                <p>Telefone: (41) 98717-8509</p>
                 <p>Email: contato@agendamentomedico.com.br</p>
                 <p>Endereço: Rua da Saúde, 123 - Centro, Curitiba - PR</p>
-                </div>
+            </div>
         </section>
 
         <section id="login" class="section-auth">
@@ -162,6 +441,5 @@
         </div>
     </footer>
 
-    <script src="js/script.js"></script>
-</body>
+    </body>
 </html>
