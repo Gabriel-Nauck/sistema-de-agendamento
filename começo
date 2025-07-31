@@ -16,7 +16,7 @@
         body {
             font-family: Arial, sans-serif;
             line-height: 1.6;
-            background-color: #f4f7f6;
+            background-color: #f4f4f4; /* Fundo branco-acinzentado suave */
             color: #333;
         }
 
@@ -28,7 +28,7 @@
 
         a {
             text-decoration: none;
-            color: #007bff;
+            color: #4CAF50; /* Verde principal para links */
         }
 
         a:hover {
@@ -42,7 +42,7 @@
         /* Botões */
         .btn-primary {
             display: inline-block;
-            background-color: #007bff;
+            background-color: #4CAF50; /* Verde principal para botões */
             color: #fff;
             padding: 10px 20px;
             border-radius: 5px;
@@ -52,13 +52,13 @@
         }
 
         .btn-primary:hover {
-            background-color: #0056b3;
+            background-color: #43A047; /* Verde um pouco mais escuro no hover */
             text-decoration: none;
         }
 
         .btn-secondary {
             display: inline-block;
-            background-color: #6c757d;
+            background-color: #9C27B0; /* Roxo suave para botões secundários */
             color: #fff;
             padding: 8px 15px;
             border-radius: 5px;
@@ -68,17 +68,17 @@
         }
 
         .btn-secondary:hover {
-            background-color: #5a6268;
+            background-color: #8E24AA; /* Roxo um pouco mais escuro no hover */
             text-decoration: none;
         }
 
         /* Cabeçalho (Header) */
         header {
-            background-color: #fff;
+            background-color: #ffffff; /* Branco para o cabeçalho */
             color: #333;
             padding: 20px 0;
-            border-bottom: 1px solid #ddd;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border-bottom: 1px solid #eee; /* Borda mais suave */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Sombra mais sutil */
         }
 
         header .container {
@@ -90,7 +90,7 @@
 
         header h1 {
             font-size: 28px;
-            color: #007bff;
+            color: #4CAF50; /* Verde para o título do logo */
             margin: 0;
         }
 
@@ -111,7 +111,7 @@
         }
 
         header nav ul li a:hover {
-            color: #007bff;
+            color: #4CAF50; /* Verde no hover dos links do menu */
             text-decoration: none;
         }
 
@@ -124,12 +124,12 @@
         section h2 {
             font-size: 36px;
             margin-bottom: 30px;
-            color: #007bff;
+            color: #9C27B0; /* Roxo suave para os títulos das seções */
         }
 
         /* Seção Hero (Banner Principal) */
         .hero {
-            background-color: #e0f2f7;
+            background-color: #e8f5e9; /* Fundo verde muito claro para o hero */
             color: #333;
             padding: 100px 0;
         }
@@ -137,7 +137,7 @@
         .hero h2 {
             font-size: 48px;
             margin-bottom: 20px;
-            color: #007bff;
+            color: #4CAF50; /* Verde principal para o título do hero */
         }
 
         .hero p {
@@ -161,7 +161,7 @@
         .form-group select {
             width: 100%;
             padding: 10px;
-            border: 1px solid #ddd;
+            border: 1px solid #ccc; /* Borda mais clara para inputs */
             border-radius: 5px;
             font-size: 16px;
         }
@@ -169,10 +169,10 @@
         .form-agendamento, .form-auth {
             max-width: 600px;
             margin: 0 auto;
-            background-color: #fff;
+            background-color: #ffffff; /* Branco para o fundo dos formulários */
             padding: 30px;
             border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08); /* Sombra mais visível, mas suave */
         }
 
         .form-auth p {
@@ -189,10 +189,10 @@
         }
 
         .medico-card {
-            background-color: #fff;
+            background-color: #ffffff; /* Branco para o fundo dos cards */
             padding: 20px;
             border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08); /* Sombra para os cards */
             text-align: center;
         }
 
@@ -202,7 +202,7 @@
             border-radius: 50%;
             object-fit: cover;
             margin-bottom: 15px;
-            border: 3px solid #007bff;
+            border: 3px solid #4CAF50; /* Borda da imagem verde */
         }
 
         .medico-card h3 {
@@ -226,7 +226,7 @@
         }
 
         .section-especialidades ul li {
-            background-color: #007bff;
+            background-color: #9C27B0; /* Roxo suave para as especialidades */
             color: #fff;
             padding: 10px 20px;
             border-radius: 25px;
@@ -235,7 +235,7 @@
 
         /* Rodapé (Footer) */
         footer {
-            background-color: #333;
+            background-color: #333333; /* Cinza escuro para o rodapé */
             color: #fff;
             padding: 30px 0;
             text-align: center;
@@ -324,14 +324,15 @@
                             <option value="cardiologia">Cardiologia</option>
                             <option value="dermatologia">Dermatologia</option>
                             <option value="pediatria">Pediatria</option>
-                            <option value="ginecologia">Ginecologia</option>
-                            </select>
+                            <option value="ginecologia">Ginecologia e Obstetrícia</option>
+                            <option value="oftalmologia">Oftalmologia</option>
+                        </select>
                     </div>
                     <div class="form-group">
                         <label for="medico">Médico:</label>
                         <select id="medico" name="medico" required>
                             <option value="">Selecione o Médico</option>
-                            </select>
+                        </select>
                     </div>
                     <div class="form-group">
                         <label for="data-consulta">Data:</label>
@@ -341,7 +342,7 @@
                         <label for="hora-consulta">Horário:</label>
                         <select id="hora-consulta" name="hora-consulta" required>
                             <option value="">Selecione o Horário</option>
-                            </select>
+                        </select>
                     </div>
                     <button type="submit" class="btn-primary">Buscar Horários</button>
                 </form>
@@ -364,7 +365,25 @@
                         <p>Cardiologista</p>
                         <a href="#" class="btn-secondary">Ver Perfil</a>
                     </div>
+                    <div class="medico-card">
+                        <img src="https://www.odontofaciale.com/wp-content/uploads/2024/06/carolina.webp" alt="Dra. Carolina Mendes">
+                        <h3>Dra. Carolina Mendes</h3>
+                        <p>Pediatra</p>
+                        <a href="#" class="btn-secondary">Ver Perfil</a>
                     </div>
+                    <div class="medico-card">
+                        <img src="https://ricardozanellacad.com.br/wp-content/uploads/2023/05/img-1.webp" alt="Dr. Ricardo Almeida">
+                        <h3>Dr. Ricardo Almeida</h3>
+                        <p>Oftalmologista</p>
+                        <a href="#" class="btn-secondary">Ver Perfil</a>
+                    </div>
+                    <div class="medico-card">
+                        <img src="https://img.freepik.com/fotos-premium/rosto-de-jovem-e-feliz-doutora-sorrindo_251136-18949.jpg" alt="Dra. Juliana Costa">
+                        <h3>Dra. Juliana Costa</h3>
+                        <p>Ginecologista e Obstetra</p>
+                        <a href="#" class="btn-secondary">Ver Perfil</a>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -377,8 +396,7 @@
                     <li>Pediatria</li>
                     <li>Ginecologia e Obstetrícia</li>
                     <li>Oftalmologia</li>
-                    
-                    </ul>
+                </ul>
             </div>
         </section>
 
@@ -425,7 +443,7 @@
                         <label for="cadastro-telefone">Telefone:</label>
                         <input type="tel" id="cadastro-telefone" name="telefone" required>
                     </div>
-                     <div class="form-group">
+                    <div class="form-group">
                         <label for="cadastro-senha">Senha:</label>
                         <input type="password" id="cadastro-senha" name="senha" required>
                     </div>
@@ -441,5 +459,5 @@
         </div>
     </footer>
 
-    </body>
+</body>
 </html>
