@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clínica Online - Sua Saúde na Mão</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>Clínica Online</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Início</a></li>
+                    <li><a href="#agendamento">Agendar Consulta</a></li>
+                    <li><a href="#agendamento">Nossos Médicos</a></li>
+                    <li><a href="#agendamento">Especialidades</a></li>
+                    <li><a href="paciente.html">Área do Paciente</a></li>
+                    <li><a href="funcionario.html">Área do Funcionário</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="container">
+                <h2>Encontre o médico ideal e agende sua consulta online!</h2>
+                <p>Facilidade, agilidade e segurança para cuidar da sua saúde.</p>
+                <a href="#agendamento" class="btn-primary">Agendar Agora</a>
+            </div>
+        </section>
+
+        <section id="agendamento" class="section-agendamento">
+            <div class="container">
+                <h2>Agende Sua Consulta</h2>
+                <form class="form-agendamento">
+                    <div class="form-group">
+                        <label for="plano_saude">Plano de Saúde:</label>
+                        <select id="plano_saude" name="plano_saude">
+                            <option value="">Selecione seu plano de saúde</option>
+                            <option value="1">Unimed</option>
+                            <option value="2">SulAmérica</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="especialidade">Especialidade:</label>
+                        <select id="especialidade" name="especialidade" required>
+                            <option value="">Selecione a Especialidade</option>
+                            <option value="1">Cardiologia</option>
+                            <option value="2">Dermatologia</option>
+                            <option value="3">Pediatria</option>
+                            <option value="4">Ginecologia</option>
+                            <option value="5">Oftalmologia</option>
+                            <option value="6">Ortopedia</option>
+                            <option value="7">Psicologia</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="medico">Médico:</label>
+                        <select id="medico" name="medico" required>
+                            <option value="">Selecione o Médico</option>
+                            <option value="1">Dra. Ana Silva (Dermatologista)</option>
+                            <option value="2">Dr. João Oliveira (Cardiologista)</option>
+                            <option value="3">Dra. Carolina Mendes (Pediatra)</option>
+                            <option value="4">Dr. Ricardo Almeida (Oftalmologista)</option>
+                            <option value="5">Dra. Juliana Costa (Ginecologista)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="data-consulta">Data:</label>
+                        <input type="date" id="data-consulta" name="data-consulta" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="hora-consulta">Horário:</label>
+                        <select id="hora-consulta" name="hora-consulta" required>
+                            <option value="">Selecione o Horário</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn-primary">Finalizar Agendamento</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Clínica Online. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>
