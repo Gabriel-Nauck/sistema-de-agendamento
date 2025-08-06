@@ -3,302 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agendamento Médico Online - Sua Saúde na Mão</title>
-
-    <style>
-        /* Geral e Reset Básico */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            background-color: #f4f4f4; /* Fundo branco-acinzentado suave */
-            color: #333;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        a {
-            text-decoration: none;
-            color: #4CAF50; /* Verde principal para links */
-        }
-
-        a:hover {
-            text-decoration: underline;
-        }
-
-        ul {
-            list-style: none;
-        }
-
-        /* Botões */
-        .btn-primary {
-            display: inline-block;
-            background-color: #4CAF50; /* Verde principal para botões */
-            color: #fff;
-            padding: 10px 20px;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-            border: none;
-            cursor: pointer;
-        }
-
-        .btn-primary:hover {
-            background-color: #43A047; /* Verde um pouco mais escuro no hover */
-            text-decoration: none;
-        }
-
-        .btn-secondary {
-            display: inline-block;
-            background-color: #9C27B0; /* Roxo suave para botões secundários */
-            color: #fff;
-            padding: 8px 15px;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-            border: none;
-            cursor: pointer;
-        }
-
-        .btn-secondary:hover {
-            background-color: #8E24AA; /* Roxo um pouco mais escuro no hover */
-            text-decoration: none;
-        }
-
-        /* Cabeçalho (Header) */
-        header {
-            background-color: #ffffff; /* Branco para o cabeçalho */
-            color: #333;
-            padding: 20px 0;
-            border-bottom: 1px solid #eee; /* Borda mais suave */
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Sombra mais sutil */
-        }
-
-        header .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-
-        header h1 {
-            font-size: 28px;
-            color: #4CAF50; /* Verde para o título do logo */
-            margin: 0;
-        }
-
-        header nav ul {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-
-        header nav ul li {
-            margin-left: 20px;
-        }
-
-        header nav ul li a {
-            color: #555;
-            font-weight: bold;
-            transition: color 0.3s ease;
-        }
-
-        header nav ul li a:hover {
-            color: #4CAF50; /* Verde no hover dos links do menu */
-            text-decoration: none;
-        }
-
-        /* Seções Gerais */
-        section {
-            padding: 60px 0;
-            text-align: center;
-        }
-
-        section h2 {
-            font-size: 36px;
-            margin-bottom: 30px;
-            color: #9C27B0; /* Roxo suave para os títulos das seções */
-        }
-
-        /* Seção Hero (Banner Principal) */
-        .hero {
-            background-color: #e8f5e9; /* Fundo verde muito claro para o hero */
-            color: #333;
-            padding: 100px 0;
-        }
-
-        .hero h2 {
-            font-size: 48px;
-            margin-bottom: 20px;
-            color: #4CAF50; /* Verde principal para o título do hero */
-        }
-
-        .hero p {
-            font-size: 20px;
-            margin-bottom: 30px;
-        }
-
-        /* Formulários */
-        .form-group {
-            margin-bottom: 15px;
-            text-align: left;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: bold;
-        }
-
-        .form-group input,
-        .form-group select {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ccc; /* Borda mais clara para inputs */
-            border-radius: 5px;
-            font-size: 16px;
-        }
-
-        .form-agendamento, .form-auth {
-            max-width: 600px;
-            margin: 0 auto;
-            background-color: #ffffff; /* Branco para o fundo dos formulários */
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08); /* Sombra mais visível, mas suave */
-        }
-
-        .form-auth p {
-            margin-top: 15px;
-            font-size: 14px;
-        }
-
-        /* Cards de Médico */
-        .medico-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-
-        .medico-card {
-            background-color: #ffffff; /* Branco para o fundo dos cards */
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08); /* Sombra para os cards */
-            text-align: center;
-        }
-
-        .medico-card img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-bottom: 15px;
-            border: 3px solid #4CAF50; /* Borda da imagem verde */
-        }
-
-        .medico-card h3 {
-            font-size: 22px;
-            margin-bottom: 5px;
-            color: #333;
-        }
-
-        .medico-card p {
-            color: #666;
-            margin-bottom: 15px;
-        }
-
-        /* Seção de Especialidades */
-        .section-especialidades ul {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 15px;
-            margin-top: 30px;
-        }
-
-        .section-especialidades ul li {
-            background-color: #9C27B0; /* Roxo suave para as especialidades */
-            color: #fff;
-            padding: 10px 20px;
-            border-radius: 25px;
-            font-weight: bold;
-        }
-
-        /* Rodapé (Footer) */
-        footer {
-            background-color: #333333; /* Cinza escuro para o rodapé */
-            color: #fff;
-            padding: 30px 0;
-            text-align: center;
-            margin-top: 50px;
-        }
-
-        footer p {
-            margin: 0;
-        }
-
-        /* --- Responsividade --- */
-        @media (max-width: 768px) {
-            header .container {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            header nav ul {
-                margin-top: 15px;
-                flex-direction: column;
-            }
-
-            header nav ul li {
-                margin: 5px 0;
-            }
-
-            .hero h2 {
-                font-size: 36px;
-            }
-
-            .hero p {
-                font-size: 18px;
-            }
-
-            section {
-                padding: 40px 0;
-            }
-
-            section h2 {
-                font-size: 30px;
-            }
-
-            .medico-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+    <title>Clínica Online - Sua Saúde na Mão</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
         <div class="container">
             <div class="logo">
-                <h1>Agendamento Médico Online</h1>
+                <h1>Clínica Online</h1>
             </div>
             <nav>
                 <ul>
                     <li><a href="#home">Início</a></li>
                     <li><a href="#agendamento">Agendar Consulta</a></li>
-                    <li><a href="#medicos">Nossos Médicos</a></li>
-                    <li><a href="#especialidades">Especialidades</a></li>
-                    <li><a href="#contato">Contato</a></li>
-                    <li><a href="#login">Login</a></li>
-                    <li><a href="#cadastro">Cadastre-se</a></li>
+                    <li><a href="#agendamento">Nossos Médicos</a></li>
+                    <li><a href="paciente.html">Área do Paciente</a></li>
+                    <li><a href="funcionario.html">Área do Funcionário</a></li>
                 </ul>
             </nav>
         </div>
@@ -318,20 +38,35 @@
                 <h2>Agende Sua Consulta</h2>
                 <form class="form-agendamento">
                     <div class="form-group">
+                        <label for="plano_saude">Plano de Saúde:</label>
+                        <select id="plano_saude" name="plano_saude">
+                            <option value="">Selecione seu plano de saúde</option>
+                            <option value="1">Unimed</option>
+                            <option value="2">SulAmérica</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
                         <label for="especialidade">Especialidade:</label>
                         <select id="especialidade" name="especialidade" required>
                             <option value="">Selecione a Especialidade</option>
-                            <option value="cardiologia">Cardiologia</option>
-                            <option value="dermatologia">Dermatologia</option>
-                            <option value="pediatria">Pediatria</option>
-                            <option value="ginecologia">Ginecologia e Obstetrícia</option>
-                            <option value="oftalmologia">Oftalmologia</option>
+                            <option value="1">Cardiologia</option>
+                            <option value="2">Dermatologia</option>
+                            <option value="3">Pediatria</option>
+                            <option value="4">Ginecologia</option>
+                            <option value="5">Oftalmologia</option>
+                            <option value="6">Ortopedia</option>
+                            <option value="7">Psicologia</option>
                         </select>
                     </div>
                     <div class="form-group">
                         <label for="medico">Médico:</label>
                         <select id="medico" name="medico" required>
                             <option value="">Selecione o Médico</option>
+                            <option value="1">Dra. Ana Silva (Dermatologista)</option>
+                            <option value="2">Dr. João Oliveira (Cardiologista)</option>
+                            <option value="3">Dra. Carolina Mendes (Pediatra)</option>
+                            <option value="4">Dr. Ricardo Almeida (Oftalmologista)</option>
+                            <option value="5">Dra. Juliana Costa (Ginecologista)</option>
                         </select>
                     </div>
                     <div class="form-group">
@@ -344,110 +79,7 @@
                             <option value="">Selecione o Horário</option>
                         </select>
                     </div>
-                    <button type="submit" class="btn-primary">Buscar Horários</button>
-                </form>
-            </div>
-        </section>
-
-        <section id="medicos" class="section-medicos">
-            <div class="container">
-                <h2>Nossos Profissionais</h2>
-                <div class="medico-grid">
-                    <div class="medico-card">
-                        <img src="https://avozdaserra.com.br/sites/default/files/n/5023/20210824_col-etc-futura-doutora-.jpg" alt="Dra. Ana Silva">
-                        <h3>Dra. Ana Silva</h3>
-                        <p>Dermatologista</p>
-                        <a href="#" class="btn-secondary">Ver Perfil</a>
-                    </div>
-                    <div class="medico-card">
-                        <img src="https://empreendedor.com.br/wp-content/uploads/2021/01/rsw_350h_263i_truecg_trueft_cover-300x225.jpg" alt="Dr. João Oliveira">
-                        <h3>Dr. João Oliveira</h3>
-                        <p>Cardiologista</p>
-                        <a href="#" class="btn-secondary">Ver Perfil</a>
-                    </div>
-                    <div class="medico-card">
-                        <img src="https://www.odontofaciale.com/wp-content/uploads/2024/06/carolina.webp" alt="Dra. Carolina Mendes">
-                        <h3>Dra. Carolina Mendes</h3>
-                        <p>Pediatra</p>
-                        <a href="#" class="btn-secondary">Ver Perfil</a>
-                    </div>
-                    <div class="medico-card">
-                        <img src="https://ricardozanellacad.com.br/wp-content/uploads/2023/05/img-1.webp" alt="Dr. Ricardo Almeida">
-                        <h3>Dr. Ricardo Almeida</h3>
-                        <p>Oftalmologista</p>
-                        <a href="#" class="btn-secondary">Ver Perfil</a>
-                    </div>
-                    <div class="medico-card">
-                        <img src="https://img.freepik.com/fotos-premium/rosto-de-jovem-e-feliz-doutora-sorrindo_251136-18949.jpg" alt="Dra. Juliana Costa">
-                        <h3>Dra. Juliana Costa</h3>
-                        <p>Ginecologista e Obstetra</p>
-                        <a href="#" class="btn-secondary">Ver Perfil</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="especialidades" class="section-especialidades">
-            <div class="container">
-                <h2>Nossas Especialidades</h2>
-                <ul>
-                    <li>Cardiologia</li>
-                    <li>Dermatologia</li>
-                    <li>Pediatria</li>
-                    <li>Ginecologia e Obstetrícia</li>
-                    <li>Oftalmologia</li>
-                </ul>
-            </div>
-        </section>
-
-        <section id="contato" class="section-contato">
-            <div class="container">
-                <h2>Fale Conosco</h2>
-                <p>Telefone: (41) 98717-8509</p>
-                <p>Email: contato@agendamentomedico.com.br</p>
-                <p>Endereço: Rua da Saúde, 123 - Centro, Curitiba - PR</p>
-            </div>
-        </section>
-
-        <section id="login" class="section-auth">
-            <div class="container">
-                <h2>Login</h2>
-                <form class="form-auth">
-                    <div class="form-group">
-                        <label for="login-email">E-mail:</label>
-                        <input type="email" id="login-email" name="email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="login-senha">Senha:</label>
-                        <input type="password" id="login-senha" name="senha" required>
-                    </div>
-                    <button type="submit" class="btn-primary">Entrar</button>
-                    <p>Esqueceu sua senha? <a href="#">Clique aqui</a></p>
-                </form>
-            </div>
-        </section>
-
-        <section id="cadastro" class="section-auth">
-            <div class="container">
-                <h2>Cadastre-se</h2>
-                <form class="form-auth">
-                    <div class="form-group">
-                        <label for="cadastro-nome">Nome Completo:</label>
-                        <input type="text" id="cadastro-nome" name="nome" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="cadastro-email">E-mail:</label>
-                        <input type="email" id="cadastro-email" name="email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="cadastro-telefone">Telefone:</label>
-                        <input type="tel" id="cadastro-telefone" name="telefone" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="cadastro-senha">Senha:</label>
-                        <input type="password" id="cadastro-senha" name="senha" required>
-                    </div>
-                    <button type="submit" class="btn-primary">Criar Conta</button>
+                    <button type="submit" class="btn-primary">Finalizar Agendamento</button>
                 </form>
             </div>
         </section>
@@ -455,9 +87,8 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2025 Agendamento Médico Online. Todos os direitos reservados.</p>
+            <p>&copy; 2025 Clínica Online. Todos os direitos reservados.</p>
         </div>
     </footer>
-
 </body>
 </html>
