@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Área do Paciente</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>Área do Paciente</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="#">Minha Conta</a></li>
+                    <li><a href="#">Meus Agendamentos</a></li>
+                    <li><a href="#">Histórico de Consultas</a></li>
+                    <li><a href="#">Resultados de Exames</a></li>
+                    <li><a href="#">Pagamentos</a></li>
+                    <li><a href="#">Sair</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="login" class="section-auth">
+            <div class="container">
+                <h2>Login do Paciente</h2>
+                <form class="form-auth">
+                    <div class="form-group">
+                        <label for="login-email">E-mail:</label>
+                        <input type="email" id="login-email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="login-senha">Senha:</label>
+                        <input type="password" id="login-senha" name="senha" required>
+                    </div>
+                    <button type="submit" class="btn-primary">Entrar</button>
+                    <p>Não tem uma conta? <a href="#cadastro">Cadastre-se</a></p>
+                </form>
+            </div>
+        </section>
+
+        <section id="cadastro" class="section-auth">
+            <div class="container">
+                <h2>Cadastre-se como Paciente</h2>
+                <form class="form-auth">
+                    <div class="form-group">
+                        <label for="cadastro-nome">Nome Completo:</label>
+                        <input type="text" id="cadastro-nome" name="nome" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="cadastro-email">E-mail:</label>
+                        <input type="email" id="cadastro-email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="cadastro-telefone">Telefone:</label>
+                        <input type="tel" id="cadastro-telefone" name="telefone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="cadastro-senha">Senha:</label>
+                        <input type="password" id="cadastro-senha" name="senha" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="cadastro-plano">Plano de Saúde:</label>
+                        <select id="cadastro-plano" name="plano_saude_id" required>
+                             <option value="">Selecione</option>
+                            <option value="1">Unimed</option>
+                            <option value="2">SulAmérica</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn-primary">Criar Conta</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Clínica Online. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>
